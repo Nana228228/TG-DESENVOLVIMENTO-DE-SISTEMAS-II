@@ -1,4 +1,4 @@
-# **Projeto de Business Intelligence para Comissionamento de Vendas 3P
+# Projeto de Business Intelligence para Comissionamento de Vendas 3P
 
 
 ## Autores
