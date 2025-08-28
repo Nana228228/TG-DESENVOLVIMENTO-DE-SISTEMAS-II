@@ -40,10 +40,12 @@ O sistema atenderá a um amplo espectro de profissionais, desde a liderança est
 
 O sucesso do produto será medido pela sua capacidade de entregar os seguintes atributos:
 
-* 🚀 **Velocidade e Desempenho:** Rápida análise de dados para uma tomada de decisão ágil.
-* 🧑‍💻 **Usabilidade:** Baixa curva de aprendizado e interface intuitiva para promover a adoção em todos os níveis.
-* 🔒 **Confiabilidade:** Alta precisão e consistência dos dados e dos cálculos apresentados.
-* 🔧 **Flexibilidade e Escalabilidade:**
-    * Possibilidade de integração de novas fontes de dados.
-    * Capacidade de cálculo de novas métricas com os dados disponíveis.
-* 📊 **Autonomia do Usuário:** Permitir que os usuários criem seus próprios relatórios e filtros para explorar os dados de acordo com suas necessidades específicas e de forma independente.
+* Velocidade e Desempenho para uma tomada de decisão ágil.
+* Baixa curva de aprendizado e interface intuitiva para promover a adoção em todos os níveis.
+* Precisão e consistência dos dados e dos cálculos apresentados.
+* Possibilidade de integração de novas fontes de dados.
+* Capacidade de cálculo de novas métricas com os dados disponíveis.
+* Permitir que os usuários criem seus próprios relatórios e filtros para explorar os dados de acordo com suas necessidades específicas e de forma independente.
+* Possibilitar compartilhamento de relatórios entre os usuários.
+* Controle de acesso para dados confidenciais.
+* Abertura de tickets para relatos de problemas no sistema. 
