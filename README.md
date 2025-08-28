@@ -3,6 +3,7 @@
 
 ## Autores
 Naomi Arakaki 10438010
+Melissa Zanelato 10436651
 
 ## Cenário de Negócio e Concepção da Solução
 
