@@ -67,24 +67,16 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 
 ### Usuário do Sistema
 
-| Caso de Uso                       | Detalhes   |
-|-----------------------------------|----------------------------|
-| Integrar de novas tabelas        |                            |
-| Acessar relatórios prontos       |                            |
-| Criar novo relatório             |                            |
-|                                   | Selecionar tabelas       |
-|                                   | Selecionar métricas       |
-|                                   | Selecionar períodos      |
-|                                   | Criar métricas.            |
-|                                   | Selecionar formas de visualizar os dados      |
-|                                   | Escolher nome para o relatório          |
-|                                   | Salvar relatório          |
-|                                   | Escolher visibilidade          |
-| Editar relatório                 |                            |
-| Compartilhar relatório           |                            |
-| Abrir ticket                     |                            |
-| Visualizar ticket                |                            |
-| Ir para a área de aprendizado    |                            |
+| Caso de Uso                       |
+|-----------------------------------|
+| Integrar de novas tabelas        |                            
+| Acessar relatórios prontos       |                            
+| Criar novo relatório             |                            
+| Editar relatório                 |                            
+| Compartilhar relatório           |                            
+| Abrir ticket                     |                            
+| Visualizar ticket                |                            
+| Ir para a área de aprendizado    |                            
  
 
 
