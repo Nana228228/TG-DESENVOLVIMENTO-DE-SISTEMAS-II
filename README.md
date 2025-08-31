@@ -6,37 +6,48 @@ Naomi Arakaki 10438010
 
 Melissa Zanelato 10436651
 
-## Cenário de Negócio e Concepção da Solução
+# Cenário de Negócio e Concepção da Solução
 
-Um e-commerce generalista, que opera com um vasto leque de categorias de produtos, busca otimizar sua estratégia de comissionamento para as operações de marketplace (3P). Neste modelo, os vendedores parceiros (*sellers*) são responsáveis por anunciar seus produtos, gerenciar a logística de entrega, definir a precificação e executar as estratégias de marketing.
+Um marketplace generalista, que opera com um vasto leque de categorias de produtos, busca otimizar sua tomada de decisão de forma que sejam orientadas a dados. Neste modelo, os vendedores parceiros (*sellers*) são responsáveis por anunciar seus produtos, gerenciar a logística de entrega, definir a precificação e executar as estratégias de marketing.
 
-Problema Central: A necessidade de um sistema robusto que forneça insights claros e acionáveis para a definição das taxas de comissão de vendas. A ausência de uma ferramenta analítica centralizada dificulta a tomada de decisão, que pode ser baseada mais em intuição do que em dados concretos, gerando potenciais perdas de receita e oportunidades de crescimento.
 
-Para endereçar este desafio, propõe-se a criação de um **Sistema de Business Intelligence (BI)** focado em monitorar e analisar as métricas essenciais que influenciam e são influenciadas pelas comissões de vendas.
+Problema Central: A ausência de uma ferramenta analítica centralizada dificulta a tomada de decisão, que pode ser baseada mais em intuição do que em dados concretos, gerando potenciais perdas de receita e oportunidades de crescimento.
 
-O objetivo é transformar dados brutos em inteligência de negócio, permitindo que a liderança e as equipes táticas tomem decisões mais rápidas, estratégicas e baseadas em evidências.
+> Assim, o sistema que vamos construir busca transformar o marketplace em uma organização **data-driven**, construindo um **Data Warehouse (DW)** centralizado como única fonte da verdade. A arquitetura será otimizada com **Data Marts** departamentais para garantir alta performance. Integrado a uma plataforma de **Business Intelligence (BI)**, o projeto visa democratizar o acesso a dados consistentes e acionáveis, fomentando uma cultura de decisões estratégicas baseadas em evidências.
 
-### 🎯 Objetivos do Sistema
+### Clientes (Sponsors do Projeto)
 
-* **Centralizar e Integrar Dados:** Unificar diferentes fontes de dados (vendas, cadastro de produtos, *sellers*, etc.) em um único ambiente analítico.
-* **Análise de Métricas Chave:** Fornecer cálculos precisos e visualizações claras das seguintes métricas:
-    * ROI (Retorno sobre o Investimento)
-    * Elasticidade de Preço vs. Comissão e Lucro
-* **Segmentação e Agrupamento:** Permitir a análise das métricas com diferentes níveis de granularidade:
-    * Por **Categoria**
-    * Por **Vendedor** (*Seller*)
-    * Por **SKU** (Unidade de Manutenção de Estoque)
-* **Empoderar Usuários:** Capacitar as equipes a realizarem suas próprias análises sem depender do time de tecnologia.
+Este grupo representa a liderança da empresa, responsável por aprovar, financiar e definir a direção estratégica do projeto.
 
-### 👥 Público-Alvo
+-   **C-Level (CEO, COO, CFO, CMO):** Utilizarão os dashboards executivos para monitorar a saúde geral do negócio, tomar decisões estratégicas de alto impacto e reportar resultados ao conselho.
+-   **Diretores e Chefes de Departamento (Vendas, Marketing, Operações, Produto):** São os principais clientes dos Data Marts departamentais. Eles patrocinam o projeto para obter autonomia e inteligência de dados para suas equipes, visando o cumprimento de metas e a otimização de suas áreas.
 
-O sistema atenderá a um amplo espectro de profissionais, desde a liderança estratégica até os analistas táticos:
+### Usuários Finais (Consumidores da Informação)
 
-* **Liderança Executiva:** Comercial e Financeiro.
-* **Diretoria e Gerência:** Setores Financeiro, de Vendas e de Categorias.
-* **Analistas e Especialistas:** Profissionais que influenciam a tomada de decisão.
+São os profissionais que irão interagir diretamente com a plataforma de BI no dia a dia para executar suas funções.
 
-### ✨ Fatores Críticos de Qualidade
+-   **Analistas de Dados e de BI:** Usuários avançados que irão construir dashboards, realizar análises complexas (ad-hoc) e disseminar insights pela organização.
+-   **Analistas de Marketing:** Utilizarão a plataforma para segmentar clientes, medir o ROI de campanhas, analisar o funil de conversão e otimizar o orçamento de marketing.
+-   **Gerentes de Categoria e Vendas:** Monitorarão o desempenho de vendedores (sellers), a performance de produtos, a competitividade de preços e a saúde de suas categorias.
+-   **Analistas de Operações e Logística:** Acompanharão a eficiência das entregas, os custos de frete, os níveis de serviço do atendimento ao cliente e os indicadores de fraude.
+-   **Gerentes de Produto (Product Managers):** Analisarão o comportamento do usuário na plataforma, o engajamento com novas funcionalidades e o desempenho da busca interna para guiar o roadmap do produto.
+
+### Equipe do Projeto (Construtores e Mantenedores)
+
+Este grupo é responsável pelo desenvolvimento técnico, manutenção e evolução da infraestrutura de dados.
+
+-   **Engenheiros de Dados:** Responsáveis por construir e manter os pipelines de ETL/ELT, o Data Warehouse e os Data Marts, garantindo a qualidade e a disponibilidade dos dados.
+-   **Desenvolvedores de BI:** Especialistas na ferramenta de BI escolhida, responsáveis por criar os modelos de dados semânticos, dashboards complexos e treinar os usuários finais.
+-   **Administradores de Sistemas / DevOps:** Garantirão a infraestrutura, segurança e performance da solução em nuvem.
+
+### Impactados Indiretos (Beneficiários do Ecossistema)
+
+Embora não acessem a plataforma diretamente, estes grupos serão positivamente impactados pelas melhorias e otimizações que ela proporciona.
+
+-   **Vendedores do Marketplace (Sellers):** Serão beneficiados por políticas mais justas e transparentes, insights sobre tendências de mercado (compartilhados pelo marketplace) e uma plataforma mais eficiente para vender seus produtos.
+-   **Clientes Finais (Compradores):** Terão uma melhor experiência de compra através de uma plataforma mais estável, recomendações de produtos mais relevantes, um sortimento de produtos alinhado com suas buscas e um atendimento ao cliente mais ágil e eficaz.
+
+### Fatores Críticos de Qualidade
 
 O sucesso do produto será medido pela sua capacidade de entregar os seguintes atributos:
 
@@ -50,7 +61,7 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 * Controle de acesso para dados confidenciais.
 * Abertura de tickets para relatos de problemas no sistema.
   
-# 📌 Modelo de Casos de Uso
+# Modelo de Casos de Uso
 
 ## Casos de Uso por Ator
 
@@ -67,11 +78,32 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 | Exportar relatório                           |
 | Abrir ticket                                 |
 
+| Caso de Uso                       | Detalhes (`<<include>>`)   |
+|-----------------------------------|----------------------------|
+| Integrar de novas tabelas        |                            |
+| Acessar relatórios prontos       |                            |
+| Criar novo relatório             |                            |
+|                                   | Selecionar tabelas       |
+|                                   | Selecionar métricas       |
+|                                   | Selecionar períodos      |
+|                                   | Criar métricas.            |
+|                                   | Selecionar formas de vizualizar os dados      |
+|                                   | Escolher nome para o relatório          |
+|                                   | Salvar relatório          |
+| Editar relatório                 |                            |
+| Conpartilhar relatório           |                            |
+| Abrir ticket                     |                            |
+| Vizualizar ticket                |                            |
+| Ir para a área de aprendizado    |                            |
+ 
+
+
+
 ### Administrador do Sistema
 | Caso de Uso                      | Detalhes (`<<include>>`) |
 |----------------------------------|--------------------------|
 | **Administrar usuários**         |                          |
-|                                  | Configurar permissões    |
+|                                  | Configurar permissões à bases de dados   |
 |                                  | Criar usuário            |
 |                                  | Excluir usuário          |
 
