@@ -160,5 +160,6 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 ---
 
 ## 4. Diagrama de Caso de Uso (UML)
-<img width="498" height="1508" alt="image" src="https://github.com/user-attachments/assets/8fef66d2-6f42-4dd0-96cc-1b27e7223109" />
+<img width="501" height="1616" alt="image" src="https://github.com/user-attachments/assets/41999926-3209-4192-861d-5952c2daebd9" />
+
 
