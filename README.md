@@ -66,17 +66,6 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 ## Casos de Uso por Ator
 
 ### Usuário do Sistema
-| Caso de Uso                                  |
-|----------------------------------------------|
-| Integrar de novas tabelas de dados           |
-| Acessar relatórios prontos                   |
-| Selecionar tabelas para novo relatório       |
-| Selecionar métricas por categoria/seller/SKU |
-| Selecionar períodos de tempo                 |
-| Criar métricas a partir das disponíveis      |
-| Editar formas de vizualizações de dados      |
-| Exportar relatório                           |
-| Abrir ticket                                 |
 
 | Caso de Uso                       | Detalhes (`<<include>>`)   |
 |-----------------------------------|----------------------------|
@@ -87,25 +76,26 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 |                                   | Selecionar métricas       |
 |                                   | Selecionar períodos      |
 |                                   | Criar métricas.            |
-|                                   | Selecionar formas de vizualizar os dados      |
+|                                   | Selecionar formas de visualizar os dados      |
 |                                   | Escolher nome para o relatório          |
 |                                   | Salvar relatório          |
+|                                   | Escolher visibilidade          |
 | Editar relatório                 |                            |
-| Conpartilhar relatório           |                            |
+| Compartilhar relatório           |                            |
 | Abrir ticket                     |                            |
-| Vizualizar ticket                |                            |
+| Visualizar ticket                |                            |
 | Ir para a área de aprendizado    |                            |
  
 
 
 
 ### Administrador do Sistema
-| Caso de Uso                      | Detalhes (`<<include>>`) |
-|----------------------------------|--------------------------|
-| **Administrar usuários**         |                          |
-|                                  | Configurar permissões à bases de dados   |
-|                                  | Criar usuário            |
-|                                  | Excluir usuário          |
+| Caso de Uso                      |
+|----------------------------------|
+| Configurar permissões à bases de dados         | 
+| Criar usuário                    |
+| Excluir usuário                  |
+
 
 
 ### Sistema de Integração
@@ -114,11 +104,36 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 | Atualizar base de dados    |
 
 
+
+
 ---
 
 ## 2. Descrição Resumida dos Casos de Uso
+### Usuário
+* Acessar relatórios prontos: O usuário terá uma interface na qual todos relatórios públicos estarão disponíveis para consulta e edição. 
+* Criar novo relatório: Se os relatórios prontos não suprirem as necessidades, é possível criar um relatório do 0.          
+* Selecionar tabelas: Cada usuário tem acesso à tabelas especícicas de acordo com seu cargo e área.
+* Integrar de novas tabelas: Exportar tabelas (de fontes como sql, excel, csv, etc) para que possam ser relacionadas com as tabelas já fornecidas.
+* Selecionar métricas: Selecionar métricas já disponíveis pelo datawarehouse, que variam com a tabela na qual se está trabalhando.
+* Selecionar períodos: Selecionar o escopo temporal (meses, Quarters, YTD, RY, etc)
+* Criar métricas: A partir das métricas e dos períodos de tempo disponíveis, será possível realizar calculos entre elas e escolher um nome para a nova métrica.
+* Selecionar formas de visualizar os dados: tablular ou gráfico (e o tipo de gráfico). 
+* Editar formatação: escolher fonte e cor de cada eixo/título.
+* Escolher nome para o relatório: Passo necessário para salvar relatório.         
+* Salvar relatório: Salvar as alterações na nuvem para que o relatório não se perca.
+* Escolher visibilidade: O relatório poderá ser público (para outros usuários poderem consultar ou editar) ou particular (somente o criador pode ver).
+* Editar relatório: Um relatório já feito pode ser modificado, alterando as etapas de criação.                         
+* Compartilhar relatório: Os usuários selecionados receberão uma notificação com link para o relatório.          
+* Abrir ticket: Havendo problemas no sistema ou necessidade de gerenciar permissões, um ticket será enviado à equipe de desenvolvimeno ou ao administrador do sistema.                  * Visualizar tickets: Acessar os tickets editados com duas informações (Solicitante, Tipo de Suporte, Status, Equipe de Suporte, Data de Envio).                                        
+* Ir para a área de aprendizado: No próprio aplicativo haverá um link para a área de treinamento, na qual há tutoriais ensinando o passo a passo de cada um dos requisitos do usuário. 
 
- 
+### Administrador
+* Configurar permissões à bases de dados: O administrador possui grupos com acesso à determinadas tabelas. Ao configurar permissões, o administrador exclui ou inclui um ou mais usuários nesses grupos.
+* Criar usuário: Um novo acesso é criado (nome de usuário, senha e dados vinculados).
+* Excluir usuário: Um acesso é excluido do sistema, bem como seus dados vinculados.
+
+### Sistema de Integração
+* Atualizar base de dados: depois de os dados da fonte já haverem sido processados, o Sistema de Integração automaticamente carrega os dados na Datawarehouse, notificando os usuários. 
 
 ---
 
