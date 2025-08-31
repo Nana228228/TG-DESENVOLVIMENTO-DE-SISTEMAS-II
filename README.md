@@ -130,23 +130,7 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 
 ## 3. Caso de Uso Crítico (Detalhado)
 
-**Caso de Uso:** *Visualizar Simulações de Impacto de Comissão*  
-
-- **Ator Principal:** Usuário do Sistema  
-- **Objetivo:** Avaliar cenários de alteração da taxa de comissão e seu impacto no lucro e ROI.  
-- **Pré-condições:**  
-  - O sistema deve estar integrado às bases de dados de vendas e produtos.  
-  - O usuário deve estar autenticado com perfil válido.  
-- **Fluxo Principal:**  
-  1. O usuário acessa o módulo de simulações.  
-  2. Seleciona categoria, seller ou SKU.  
-  3. Define um novo percentual de comissão hipotético.  
-  4. O sistema recalcula os indicadores (lucro, ROI, elasticidade de preço).  
-  5. O sistema exibe os resultados em gráficos comparativos (antes x depois).  
-- **Fluxo Alternativo:**  
-  - Caso os dados da categoria/seller não estejam disponíveis, o sistema informa indisponibilidade de análise.  
-- **Pós-condições:**  
-  - O usuário obtém relatórios visuais para tomada de decisão sobre ajustes de comissão.  
+<img width="645" height="1139" alt="image" src="https://github.com/user-attachments/assets/2525956f-30f5-4b2d-881f-5531df81f9a9" />
 
 ---
 
