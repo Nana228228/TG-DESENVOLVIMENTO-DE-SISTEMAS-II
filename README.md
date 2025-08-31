@@ -67,7 +67,7 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 
 ### Usuário do Sistema
 
-| Caso de Uso                       | Detalhes (`<<include>>`)   |
+| Caso de Uso                       | Detalhes   |
 |-----------------------------------|----------------------------|
 | Integrar de novas tabelas        |                            |
 | Acessar relatórios prontos       |                            |
@@ -160,4 +160,5 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 ---
 
 ## 4. Diagrama de Caso de Uso (UML)
+<img width="498" height="1508" alt="image" src="https://github.com/user-attachments/assets/8fef66d2-6f42-4dd0-96cc-1b27e7223109" />
 
