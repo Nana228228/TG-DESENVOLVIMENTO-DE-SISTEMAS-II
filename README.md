@@ -45,7 +45,72 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 * Precisão e consistência dos dados e dos cálculos apresentados.
 * Possibilidade de integração de novas fontes de dados.
 * Capacidade de cálculo de novas métricas com os dados disponíveis.
-* Permitir que os usuários criem seus próprios relatórios e filtros para explorar os dados de acordo com suas necessidades específicas e de forma independente.
+* Permitir que os usuários criem seus próprios relatórios para explorar os dados de acordo com suas necessidades específicas e em poucos cliques, de forma independente.
 * Possibilitar compartilhamento de relatórios entre os usuários.
 * Controle de acesso para dados confidenciais.
-* Abertura de tickets para relatos de problemas no sistema. 
+* Abertura de tickets para relatos de problemas no sistema.
+  
+# 📌 Modelo de Casos de Uso
+
+## Casos de Uso por Ator
+
+### Usuário do Sistema
+| Caso de Uso                                  |
+|----------------------------------------------|
+| Integrar de novas tabelas de dados           |
+| Acessar relatórios prontos                   |
+| Selecionar tabelas para novo relatório       |
+| Selecionar métricas por categoria/seller/SKU |
+| Selecionar períodos de tempo                 |
+| Criar métricas a partir das disponíveis      |
+| Editar formas de vizualizações de dados      |
+| Exportar relatório                           |
+| Abrir ticket                                 |
+
+### Administrador do Sistema
+| Caso de Uso                      | Detalhes (`<<include>>`) |
+|----------------------------------|--------------------------|
+| **Administrar usuários**         |                          |
+|                                  | Configurar permissões    |
+|                                  | Criar usuário            |
+|                                  | Excluir usuário          |
+
+
+### Sistema de Integração
+| Caso de Uso                |
+|----------------------------|
+| Atualizar base de dados    |
+
+
+---
+
+## 2. Descrição Resumida dos Casos de Uso
+
+ 
+
+---
+
+## 3. Caso de Uso Crítico (Detalhado)
+
+**Caso de Uso:** *Visualizar Simulações de Impacto de Comissão*  
+
+- **Ator Principal:** Usuário do Sistema  
+- **Objetivo:** Avaliar cenários de alteração da taxa de comissão e seu impacto no lucro e ROI.  
+- **Pré-condições:**  
+  - O sistema deve estar integrado às bases de dados de vendas e produtos.  
+  - O usuário deve estar autenticado com perfil válido.  
+- **Fluxo Principal:**  
+  1. O usuário acessa o módulo de simulações.  
+  2. Seleciona categoria, seller ou SKU.  
+  3. Define um novo percentual de comissão hipotético.  
+  4. O sistema recalcula os indicadores (lucro, ROI, elasticidade de preço).  
+  5. O sistema exibe os resultados em gráficos comparativos (antes x depois).  
+- **Fluxo Alternativo:**  
+  - Caso os dados da categoria/seller não estejam disponíveis, o sistema informa indisponibilidade de análise.  
+- **Pós-condições:**  
+  - O usuário obtém relatórios visuais para tomada de decisão sobre ajustes de comissão.  
+
+---
+
+## 4. Diagrama de Caso de Uso (UML)
+
