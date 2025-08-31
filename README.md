@@ -110,18 +110,9 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 
 ## 2. Descrição Resumida dos Casos de Uso
 ### Usuário
-* Acessar relatórios prontos: O usuário terá uma interface na qual todos relatórios públicos estarão disponíveis para consulta e edição. 
+* Visulizar relatórios prontos: O usuário terá uma interface na qual todos relatórios públicos estarão disponíveis para consulta e edição. 
 * Criar novo relatório: Se os relatórios prontos não suprirem as necessidades, é possível criar um relatório do 0.          
-* Selecionar tabelas: Cada usuário tem acesso à tabelas especícicas de acordo com seu cargo e área.
 * Integrar de novas tabelas: Exportar tabelas (de fontes como sql, excel, csv, etc) para que possam ser relacionadas com as tabelas já fornecidas.
-* Selecionar métricas: Selecionar métricas já disponíveis pelo datawarehouse, que variam com a tabela na qual se está trabalhando.
-* Selecionar períodos: Selecionar o escopo temporal (meses, Quarters, YTD, RY, etc)
-* Criar métricas: A partir das métricas e dos períodos de tempo disponíveis, será possível realizar calculos entre elas e escolher um nome para a nova métrica.
-* Selecionar formas de visualizar os dados: tablular ou gráfico (e o tipo de gráfico). 
-* Editar formatação: escolher fonte e cor de cada eixo/título.
-* Escolher nome para o relatório: Passo necessário para salvar relatório.         
-* Salvar relatório: Salvar as alterações na nuvem para que o relatório não se perca.
-* Escolher visibilidade: O relatório poderá ser público (para outros usuários poderem consultar ou editar) ou particular (somente o criador pode ver).
 * Editar relatório: Um relatório já feito pode ser modificado, alterando as etapas de criação.                         
 * Compartilhar relatório: Os usuários selecionados receberão uma notificação com link para o relatório.          
 * Abrir ticket: Havendo problemas no sistema ou necessidade de gerenciar permissões, um ticket será enviado à equipe de desenvolvimeno ou ao administrador do sistema.                  * Visualizar tickets: Acessar os tickets editados com duas informações (Solicitante, Tipo de Suporte, Status, Equipe de Suporte, Data de Envio).                                        
@@ -160,6 +151,7 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 ---
 
 ## 4. Diagrama de Caso de Uso (UML)
-<img width="501" height="1616" alt="image" src="https://github.com/user-attachments/assets/41999926-3209-4192-861d-5952c2daebd9" />
+<img width="501" height="932" alt="image" src="https://github.com/user-attachments/assets/67bac5da-b95b-445c-bb36-c15468c4aa36" />
+
 
 
