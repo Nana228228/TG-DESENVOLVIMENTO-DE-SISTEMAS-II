@@ -6,6 +6,8 @@ Naomi Arakaki 10438010
 
 Melissa Zanelato 10436651
 
+Renato Gonçalves Ribeiro 10410267
+
 # Cenário de Negócio e Concepção da Solução
 
 Um marketplace generalista, que opera com um vasto leque de categorias de produtos, busca otimizar sua tomada de decisão de forma que sejam orientadas a dados. Neste modelo, os vendedores parceiros (*sellers*) são responsáveis por anunciar seus produtos, gerenciar a logística de entrega, definir a precificação e executar as estratégias de marketing.
