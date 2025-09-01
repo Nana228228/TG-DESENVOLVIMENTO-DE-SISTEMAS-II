@@ -1,4 +1,4 @@
-# Projeto de Business Intelligence para Comissionamento de Vendas 3P
+# Projeto de Business Intelligence para Marketplace
 
 
 ## Autores
@@ -12,7 +12,7 @@ Danilo Abude Gigliotti 10443431
 
 # Cenário de Negócio e Concepção da Solução
 
-Um marketplace generalista, que opera com um vasto leque de categorias de produtos, busca otimizar sua tomada de decisão de forma que sejam orientadas a dados. Neste modelo, os vendedores parceiros (*sellers*) são responsáveis por anunciar seus produtos, gerenciar a logística de entrega, definir a precificação e executar as estratégias de marketing.
+Um marketplace generalista, que opera com um vasto leque de categorias de produtos, busca otimizar sua tomada de decisão de para serem orientadas a dados. Neste modelo, os vendedores parceiros (*sellers*) são responsáveis por anunciar seus produtos, gerenciar a logística de entrega, definir a precificação e executar as estratégias de marketing.
 
 
 Problema Central: A ausência de uma ferramenta analítica centralizada dificulta a tomada de decisão, que pode ser baseada mais em intuição do que em dados concretos, gerando potenciais perdas de receita e oportunidades de crescimento.
