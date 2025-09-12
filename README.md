@@ -133,5 +133,170 @@ O sucesso do produto será medido pela sua capacidade de entregar os seguintes a
 ## 4. Diagrama de Caso de Uso (UML)
 <img width="501" height="932" alt="image" src="https://github.com/user-attachments/assets/67bac5da-b95b-445c-bb36-c15468c4aa36" />
 
+# Modelo de Domínio
+
+## Visão Geral
+Este domínio reflete os casos de uso do projeto (ver README do repositório), cobrindo criação e gestão de relatórios, integração de dados, controle de acesso, tickets e aprendizagem.
+
+## Diagrama de Classes
+> Renderizado via Mermaid.
+
+```mermaid
+classDiagram
+  direction LR
+
+  class Usuario {
+    +id
+    +nome
+    +email
+    +status
+    +criadoEm
+  }
+
+  class Credencial {
+    +usuarioId
+    +hashSenha
+    +ultimoLogin
+  }
+
+  class GrupoAcesso {
+    +id
+    +nome
+    +descricao
+  }
+
+  class Permissao {
+    +id
+    +recurso
+    +acao  // ver, criar, editar, compartilhar, administrar
+  }
+
+  class Relatorio {
+    +id
+    +titulo
+    +descricao
+    +visibilidade  // publico|privado|time
+    +status        // rascunho|publicado
+    +criadoEm
+    +atualizadoEm
+  }
+
+  class Visualizacao {
+    +id
+    +tipo  // tabela, barra, pizza, linha...
+    +configEixos
+    +configEstetica
+  }
+
+  class Metrica {
+    +id
+    +nome
+    +formula
+    +descricao
+  }
+
+  class Dimensao {
+    +id
+    +nome
+    +descricao
+  }
+
+  class Dataset {
+    +id
+    +nome
+    +origem   // SQL, CSV, Excel...
+    +schema
+    +statusCarga
+  }
+
+  class Tabela {
+    +id
+    +nome
+  }
+
+  class Campo {
+    +id
+    +nome
+    +tipo
+    +chave? // PK, FK, none
+  }
+
+  class Ticket {
+    +id
+    +tipoSuporte
+    +status  // aberto|em_andamento|resolvido|fechado
+    +solicitanteId
+    +criadoEm
+  }
+
+  class ComentarioTicket {
+    +id
+    +ticketId
+    +autorId
+    +mensagem
+    +criadoEm
+  }
+
+  class RecursoAprendizado {
+    +id
+    +titulo
+    +tipo   // artigo, video, tutorial
+    +url
+  }
+
+  class Notificacao {
+    +id
+    +tipo   // compartilhamento, carga_concluida...
+    +mensagem
+    +lidaEm?
+    +criadaEm
+  }
+
+  class JobIntegracao {
+    +id
+    +tipo   // ETL/ELT
+    +agendamento
+    +status
+    +ultimaExecucao
+  }
+
+  class DataWarehouse {
+    +id
+    +nome
+  }
+
+  class DataMart {
+    +id
+    +nome
+    +area // Vendas, Marketing, Operacoes, Produto
+  }
+
+  %% Relacionamentos
+  Usuario "1" -- "1" Credencial : autentica
+  Usuario "1" -- "0..*" Relatorio : autor
+  Usuario "1" -- "0..*" Ticket : abre
+  Usuario "0..*" -- "0..*" GrupoAcesso : participa
+  GrupoAcesso "0..*" -- "0..*" Permissao : concede
+
+  Relatorio "1" -- "1..*" Visualizacao : contem >
+  Relatorio "0..*" -- "0..*" Metrica : usa >
+  Relatorio "0..*" -- "0..*" Dimensao : filtraPor >
+  Relatorio "0..*" -- "0..*" Dataset : consulta >
+
+  Dataset "1" -- "1..*" Tabela : inclui >
+  Tabela "1" -- "1..*" Campo : possui >
+  Dataset "0..*" -- "1" DataWarehouse : resideEm >
+  DataWarehouse "1" -- "0..*" DataMart : particionaEm >
+
+  Ticket "1" -- "0..*" ComentarioTicket : possui >
+  Usuario "0..*" -- "0..*" Relatorio : compartilha >
+  Usuario "1" -- "0..*" Notificacao : recebe >
+
+  JobIntegracao "0..*" -- "0..*" Dataset : alimenta >
+
+
+
+
+
 
 
