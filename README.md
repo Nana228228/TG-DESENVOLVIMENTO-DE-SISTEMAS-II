@@ -297,6 +297,7 @@ classDiagram
   JobIntegracao "0..*" -- "0..*" Dataset : alimenta >
 
 
+## Diagrama de Classes
 
 
 
