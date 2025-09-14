@@ -10,6 +10,8 @@ Renato Gonçalves Ribeiro 10410267
 
 Danilo Abude Gigliotti 10443431
 
+Rafael Queiroz Moraes 10441847
+
 # Cenário de Negócio e Concepção da Solução
 
 Um marketplace generalista, que opera com um vasto leque de categorias de produtos, busca otimizar sua tomada de decisão de para serem orientadas a dados. Neste modelo, os vendedores parceiros (*sellers*) são responsáveis por anunciar seus produtos, gerenciar a logística de entrega, definir a precificação e executar as estratégias de marketing.
