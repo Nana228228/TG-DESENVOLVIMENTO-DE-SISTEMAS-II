@@ -295,8 +295,35 @@ classDiagram
   Usuario "1" -- "0..*" Notificacao : recebe >
 
   JobIntegracao "0..*" -- "0..*" Dataset : alimenta >
+```
+
+# Prototipação
+
+## Visão Geral
+O  wireframe de baixa fidelidade demonstra como será o sistema proposto voltado ao usuário, demonstrando telas e navegabilidade.
 
 
+## Wireframe
+> Construído no Figma: [https://www.figma.com/proto/236UxaNNXcFcqY64SokYxX/WiereFrame?node-id=0-1&t=Kkw3uJPNmMQPzgfk-1](https://www.figma.com/design/236UxaNNXcFcqY64SokYxX/WiereFrame?node-id=0-1&m=dev&t=Kkw3uJPNmMQPzgfk-1)
 
+### Login
+<img width="1138" height="691" alt="image" src="https://github.com/user-attachments/assets/ee72db7a-56b6-4a86-9b7f-0e570eca3337" />
 
+### Home
+<img width="1134" height="682" alt="image" src="https://github.com/user-attachments/assets/965676e8-a0ae-4d7e-af71-8c7beb4b832f" />
+
+### Construtor de Relatórios
+<img width="1126" height="684" alt="image" src="https://github.com/user-attachments/assets/a4b048cf-ed28-4935-81c3-41423c8d091c" />
+
+### Integração de Tabelas
+<img width="1131" height="677" alt="image" src="https://github.com/user-attachments/assets/725ae39d-d25c-4d9a-9066-524cd41b6d60" />
+
+### Tickets
+<img width="1114" height="680" alt="image" src="https://github.com/user-attachments/assets/c5e3b5f6-fc7d-40f4-a062-31b0ca55cb66" />
+
+### Learning
+<img width="1133" height="677" alt="image" src="https://github.com/user-attachments/assets/f15e9c75-52e9-40ab-b899-21af398dc8ab" />
+
+### Admin
+<img width="1132" height="677" alt="image" src="https://github.com/user-attachments/assets/54e7246d-07a3-4065-aa0b-a16caadc47e7" />
 
