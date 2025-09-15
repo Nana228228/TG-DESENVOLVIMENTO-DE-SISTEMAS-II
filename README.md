@@ -278,7 +278,7 @@ classDiagram
   Usuario "1" --> "0..*" Relatorio : autor
   Usuario "1" --> "0..*" Ticket : abre
   Usuario "0..*" -- "0..*" GrupoAcesso : participa
-  GrupoAcesso "0..*" -- "0..*" Permissao : concede
+  
 
   Relatorio "1" --> "1..*" Visualizacao : contem
   Relatorio "0..*" --> "0..*" Metrica : usa
