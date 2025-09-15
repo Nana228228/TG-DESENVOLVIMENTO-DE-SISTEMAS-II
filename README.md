@@ -178,7 +178,7 @@ classDiagram
     +titulo
     +descricao
     +visibilidade  // publico|privado|time
-    +status        // rascunho|publicado
+    +status       // rascunho|publicado
     +criadoEm
     +atualizadoEm
   }
@@ -273,28 +273,30 @@ classDiagram
     +area // Vendas, Marketing, Operacoes, Produto
   }
 
-  %% Relacionamentos
+  %% Relacionamentos (CORRIGIDOS)
   Usuario "1" -- "1" Credencial : autentica
-  Usuario "1" -- "0..*" Relatorio : autor
-  Usuario "1" -- "0..*" Ticket : abre
+  Usuario "1" --> "0..*" Relatorio : autor
+  Usuario "1" --> "0..*" Ticket : abre
   Usuario "0..*" -- "0..*" GrupoAcesso : participa
   GrupoAcesso "0..*" -- "0..*" Permissao : concede
 
-  Relatorio "1" -- "1..*" Visualizacao : contem >
-  Relatorio "0..*" -- "0..*" Metrica : usa >
-  Relatorio "0..*" -- "0..*" Dimensao : filtraPor >
-  Relatorio "0..*" -- "0..*" Dataset : consulta >
+  Relatorio "1" --> "1..*" Visualizacao : contem
+  Relatorio "0..*" --> "0..*" Metrica : usa
+  Relatorio "0..*" --> "0..*" Dimensao : filtraPor
+  Relatorio "0..*" --> "0..*" Dataset : consulta
 
-  Dataset "1" -- "1..*" Tabela : inclui >
-  Tabela "1" -- "1..*" Campo : possui >
-  Dataset "0..*" -- "1" DataWarehouse : resideEm >
-  DataWarehouse "1" -- "0..*" DataMart : particionaEm >
+  Dataset "1" --> "1..*" Tabela : inclui
+  Tabela "1" --> "1..*" Campo : possui
+  
+  %% Hierarquia de Dados Corrigida
+  DataWarehouse "1" --> "0..*" DataMart : particionaEm
+  DataMart "1" --> "0..*" Dataset : contem
 
-  Ticket "1" -- "0..*" ComentarioTicket : possui >
-  Usuario "0..*" -- "0..*" Relatorio : compartilha >
-  Usuario "1" -- "0..*" Notificacao : recebe >
+  Ticket "1" --> "0..*" ComentarioTicket : possui
+  Usuario "0..*" --> "0..*" Relatorio : compartilha
+  Usuario "1" --> "0..*" Notificacao : recebe
 
-  JobIntegracao "0..*" -- "0..*" Dataset : alimenta >
+  JobIntegracao "0..*" --> "0..*" Dataset : alimenta
 ```
 
 # Prototipação
