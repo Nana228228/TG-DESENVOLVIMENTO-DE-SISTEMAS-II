@@ -336,7 +336,8 @@ O  wireframe de baixa fidelidade demonstra como será o sistema proposto voltado
 Os requisitos abaixo foram levantados individualmente pelos membros do grupo e, em seguida, **consolidados de forma colaborativa**
 
 ### 1.1 Requisitos Funcionais (RF)
-ID | Descrição | Prioridade
+| ID    | Descrição | Prioridade |
+|-------|-------------------------|------------|
 RF01 | O usuário pode criar report do zero. | Alta
 RF02 | O usuário pode visualizar ou editar compartilhados com ele. | Alta
 RF03 | O usuário vê transações de um período e adiciona filtros ao resultado. | Alta
