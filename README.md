@@ -338,33 +338,25 @@ Os requisitos abaixo foram levantados individualmente pelos membros do grupo e, 
 ### 1.1 Requisitos Funcionais (RF)
 | ID    | Descrição | Prioridade |
 |-------|-------------------------|------------|
-RF01 | O usuário deve fazer login para utilizar o sistema. | Alta
-RF02 | O usuário pode criar report do zero. | Alta
-RF03 | O usuário pode visualizar ou editar compartilhados com ele. | Alta
-RF04 | O usuário vê transações de um período e adiciona filtros ao resultado. | Alta
-RF05 | O criador do report pode salvar, devendo atribuir um nome antes. | Alta
-RF06 | O criador do report deve poder controlar com quem ele compartilha o report. | Alta
-RF07 | O usuário deve poder exportar o report para diferentes formatos (csv, excel, ppt…). | Alta
-RF08 | O administrador deve configurar permissões de usuários às suas respectivas bases de dados conforme o grupo ao qual pertence. | Alta
-RF09 | O administrador deve poder criar um usuário novo da DW. | Alta
-RF10 | O administrador deve poder excluir um usuário da DW. | Alta
-RF11 | O usuário pode escolher atributos de estilo (tamanho da fonte, cor, espaçamento) dos dados e visualizações de dados. | Média
-RF12 | O usuário pode abrir tickets para relatar problemas no sistema. | Média
-RF13 | O usuário pode ver os tickets que abriu e seus status. | Média
-RF14 | Ao editar relatório, o usuário pode calcular novas métricas com os dados disponíveis. | Média
-RF15 | O usuário pode ir para a Área de Aprendizado para aprender as funcionalidades do sistema. | Baixa
-
-
-
-### 1.2 Requisitos Não Funcionais (RNF)
-| ID    | Tipo (FURPS+) | Descrição | Prioridade |
-|-------|--------------|-----------|------------|
 RF01 | O usuário deve autenticar no sistema. | Alta
 RF02 | O usuário pode gerenciar relatórios. | Alta
 RF03 | O usuário pode analisar e compartilhar relatórios. | Alta
 RF04 | O administrador pode gerenciar usuários e permissões. | Alta
 RF05 | O usuário pode gerenciar tickets de suporte. | Média
 RF06 | O usuário pode consultar a Área de Aprendizado. | Baixa
+
+
+### 1.2 Requisitos Não Funcionais (RNF)
+| ID    | Tipo (FURPS+) | Descrição | Prioridade |
+|-------|--------------|-----------|------------|
+RNF01 | Usabilidade | O sistema deve ter interface intuitiva e fácil de usar. | Alta
+RNF02 | Segurança | O sistema deve ser seguro, com acesso apenas a usuários autorizados. | Alta
+RNF03 | Desempenho | Consultas e relatórios devem ser processados em no máximo 5 segundos para até 10 mil registros. | Alta
+RNF05 | Desempenho | O sistema deve garantir velocidade e desempenho para uma tomada de decisão ágil. | Alta
+RNF06 | Usabilidade | O sistema deve ter baixa curva de aprendizado para promover a adoção em todos os níveis. | Alta
+RNF07 | Confiabilidade | O sistema deve garantir precisão e consistência dos dados e dos cálculos apresentados. | Alta
+RNF08 | Segurança | O sistema deve ter controle de acesso para dados confidenciais. | Alta
+RNF04 | Usabilidade | O sistema deve ser compatível com desktop e mobile. | Média
 
 ---
 
