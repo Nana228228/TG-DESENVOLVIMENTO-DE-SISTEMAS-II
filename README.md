@@ -350,33 +350,17 @@ RF06 | O usuário pode consultar a Área de Aprendizado. | Baixa
 | ID    | Tipo (FURPS+) | Descrição | Prioridade |
 |-------|--------------|-----------|------------|
 RNF01 | Usabilidade | O sistema deve ter interface intuitiva e fácil de usar. | Alta
-RNF02 | Segurança | O sistema deve ser seguro, com acesso apenas a usuários autorizados. | Alta
+RNF02 | Segurança | O sistema ter mecanismos para monitorar a segurança contra acessos não autorizados e vazamento de dados confidenciais. | Alta
 RNF03 | Desempenho | Consultas e relatórios devem ser processados em no máximo 5 segundos para até 10 mil registros. | Alta
-RNF05 | Desempenho | O sistema deve garantir velocidade e desempenho para uma tomada de decisão ágil. | Alta
-RNF06 | Usabilidade | O sistema deve ter baixa curva de aprendizado para promover a adoção em todos os níveis. | Alta
-RNF07 | Confiabilidade | O sistema deve garantir precisão e consistência dos dados e dos cálculos apresentados. | Alta
-RNF08 | Segurança | O sistema deve ter controle de acesso para dados confidenciais. | Alta
-RNF04 | Usabilidade | O sistema deve ser compatível com desktop e mobile. | Média
+RNF04 | Usabilidade | O sistema deve ter baixa curva de aprendizado para promover a adoção em todos os níveis. | Alta
+RNF05 | Confiabilidade | O sistema deve garantir precisão e consistência dos dados e dos cálculos apresentados. | Alta
 
 ---
 
-## 2. Especificação de Requisitos – Introdução
+## 2. Especificação de Requisitos 
 
-### 2.1 Introdução
-O documento apresenta a especificação de requisitos do sistema de Business Intelligence (BI) para o marketplace. O objetivo é centralizar informações de vendas e desempenho dos vendedores, oferecendo suporte à tomada de decisões baseada em dados.
+[TG3 Especificação de Requisitos.pdf](https://github.com/user-attachments/files/22580370/TG3.Especificacao.de.Requisitos.pdf)
 
-### 2.2 Propósito do Sistema
-O sistema permitirá:  
-- Visualizar e analisar o desempenho de vendas por período, vendedor e categoria de produto;  
-- Auxiliar a tomada de decisão do administrador e dos vendedores do marketplace;  
-- Disponibilizar relatórios e dashboards interativos, garantindo informações claras e atualizadas.  
-
-### 2.3 Resumo dos Requisitos Levantados
-O sistema deve atender aos seguintes requisitos iniciais:  
-- **Funcionais (RF):** visualização de vendas, relatórios de desempenho, filtros por produto e categoria, identificação de produtos mais e menos vendidos, dashboards interativos;  
-- **Não Funcionais (RNF):** interface intuitiva, segurança, processamento rápido, compatibilidade com diferentes dispositivos.  
-
-> Observação: Os requisitos funcionais poderão ser detalhados em **casos de uso**
 
 ---
 
