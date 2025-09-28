@@ -359,14 +359,12 @@ RF15 | O usuário pode ir para a Área de Aprendizado para aprender as funcional
 ### 1.2 Requisitos Não Funcionais (RNF)
 | ID    | Tipo (FURPS+) | Descrição | Prioridade |
 |-------|--------------|-----------|------------|
-RNF01 | Usabilidade | O sistema deve ter interface intuitiva e fácil de usar. | Alta
-RNF02 | Segurança | O sistema deve ser seguro, com acesso apenas a usuários autorizados. | Alta
-RNF03 | Desempenho | Consultas e relatórios devem ser processados em no máximo 5 segundos para até 10 mil registros. | Alta
-RNF05 | Desempenho | O sistema deve garantir velocidade e desempenho para uma tomada de decisão ágil. | Alta
-RNF06 | Usabilidade | O sistema deve ter baixa curva de aprendizado para promover a adoção em todos os níveis. | Alta
-RNF07 | Confiabilidade | O sistema deve garantir precisão e consistência dos dados e dos cálculos apresentados. | Alta
-RNF08 | Segurança | O sistema deve ter controle de acesso para dados confidenciais. | Alta
-RNF04 | Usabilidade | O sistema deve ser compatível com desktop e mobile. | Média
+RF01 | O usuário deve autenticar no sistema. | Alta
+RF02 | O usuário pode gerenciar relatórios. | Alta
+RF03 | O usuário pode analisar e compartilhar relatórios. | Alta
+RF04 | O administrador pode gerenciar usuários e permissões. | Alta
+RF05 | O usuário pode gerenciar tickets de suporte. | Média
+RF06 | O usuário pode consultar a Área de Aprendizado. | Baixa
 
 ---
 
