@@ -362,6 +362,50 @@ RNF05 | Confiabilidade | O sistema deve garantir precisão e consistência dos d
 [TG3 Especificação de Requisitos.pdf](https://github.com/user-attachments/files/22580370/TG3.Especificacao.de.Requisitos.pdf)
 
 
----
+## Diagrama de Sequência de Projeto
+
+sequenceDiagram
+    actor Usuario
+    participant RelatorioController
+    participant RelatorioService
+    participant FonteDeDadosService
+    participant Relatorio
+    participant RepositorioRelatorio
+    participant NotificacaoService
+
+    %% Interação inicial
+    Usuario ->> RelatorioController: criarRelatorio(parametros)
+    RelatorioController ->> RelatorioService: validarParametros(parametros)
+    RelatorioService -->> RelatorioController: parâmetros válidos
+
+    %% Obtenção de dados
+    RelatorioController ->> FonteDeDadosService: obterDados(parametros)
+    FonteDeDadosService -->> RelatorioController: dados extraídos do DW/Data Mart
+
+    %% Criação e persistência do relatório
+    RelatorioController ->> RelatorioService: gerarRelatorio(dados)
+    RelatorioService ->> Relatorio: new Relatorio(dados)
+    Relatorio ->> RepositorioRelatorio: salvar(relatorio)
+    RepositorioRelatorio -->> Relatorio: confirmação de persistência
+    Relatorio -->> RelatorioService: relatório criado com sucesso
+    RelatorioService -->> RelatorioController: relatório pronto
+
+    %% Notificação ao usuário
+    RelatorioController ->> NotificacaoService: enviarNotificacao(Usuario, relatório)
+    NotificacaoService -->> RelatorioController: confirmação de envio
+    RelatorioController -->> Usuario: relatório criado e notificado
+
+
+## Resumo da Arquitetura e Benefícios
+
+*Fluxo centralizado no RelatorioController (padrão Controller).
+
+*Lógica de negócio isolada em RelatorioService (High Cohesion).
+
+*Integrações desacopladas via FonteDeDadosService e RepositorioRelatorio (Low Coupling).
+
+*Extensibilidade futura com suporte a novas fontes de dados (Polymorphism).
+
+*Facilidade de manutenção e clareza na atribuição de responsabilidades (Information Expert).
 
 
