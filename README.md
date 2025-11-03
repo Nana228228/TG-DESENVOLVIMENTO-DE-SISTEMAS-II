@@ -361,7 +361,9 @@ RNF05 | Confiabilidade | O sistema deve garantir precisão e consistência dos d
 
 [TG3 Especificação de Requisitos.pdf](https://github.com/user-attachments/files/22580370/TG3.Especificacao.de.Requisitos.pdf)
 
+## Diagrama de Sequência 
 
+<img width="790" height="636" alt="image" src="https://github.com/user-attachments/assets/2701d230-f486-4a18-8ad0-5debe3d755a7" />
 
 ## Resumo da Arquitetura e Benefícios
 
