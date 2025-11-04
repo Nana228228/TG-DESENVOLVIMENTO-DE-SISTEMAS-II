@@ -363,7 +363,18 @@ RNF05 | Confiabilidade | O sistema deve garantir precisão e consistência dos d
 
 ## Diagrama de Sequência 
 
-<img width="790" height="636" alt="image" src="https://github.com/user-attachments/assets/2701d230-f486-4a18-8ad0-5debe3d755a7" />
+<img width="905" height="548" alt="image" src="https://github.com/user-attachments/assets/818ae6fb-908a-4d3b-bda3-3dc454543627" />
+
+*Benefícios do Design*
+
+-Escalabilidade: Novas fontes de dados ou tipos de relatórios podem ser adicionados sem alterar a estrutura central.
+
+-Reutilização: Serviços como FonteDeDadosService e NotificacaoService podem ser usados em outros casos de uso.
+
+-Segurança e Controle: A camada de controle centraliza validações e verificações de permissão.
+
+-Manutenibilidade: Separação clara entre camadas (MVC + GRASP) reduz impactos em futuras alterações.
+
 
 ## Resumo da Arquitetura e Benefícios
 
