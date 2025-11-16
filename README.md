@@ -389,3 +389,159 @@ RNF05 | Confiabilidade | O sistema deve garantir precisão e consistência dos d
 *Facilidade de manutenção e clareza na atribuição de responsabilidades (Information Expert).
 
 
+# Componentes e Interfaces do Sistema de BI
+
+## Aplicação Web (Frontend)
+
+**Descrição:**  
+Interface do usuário (UI) renderizada no navegador, conforme prototipado nos wireframes. É o ponto de entrada para todas as interações do usuário.
+
+### Interfaces e Conexões
+
+**Interface Provedora (para o Ator):**  
+- Provê a Interface Gráfica (UI) para o Usuário/Admin, permitindo a visualização e operação do sistema.
+
+**Interfaces Requeridas (o que consome):**  
+- Requer a interface **IAutenticacao** do Serviço de Identidade (IAM) para validar credenciais (RF01).  
+- Requer a interface **IServicoBI** do Serviço de BI (API Backend) para buscar, criar, editar e compartilhar relatórios (RF02, RF03).  
+- Requer a interface **ISuporte** do Serviço de Suporte (Ticketing) para abertura e visualização de tickets (RF05).  
+- Requer a interface **IAprendizado** do Serviço de Aprendizado (Learning) para exibir conteúdos de treinamento (RF06).  
+- Requer a interface **IUploadTabela** do Serviço de Integração (ETL/ELT) para envio de arquivos CSV/Excel (Caso de Uso "Integrar novas tabelas").
+
+---
+
+## Serviço de BI (API Backend)
+
+**Descrição:**  
+Servidor de aplicação que orquestra a lógica de negócio principal, atuando como gateway e gerenciando os metadados e ciclo de vida dos relatórios.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **IServicoBI** para a Aplicação Web (Frontend), expondo endpoints para manipulação de relatórios.
+
+**Interfaces Requeridas:**  
+- Requer a interface **IAutorizacao** do Serviço de Identidade (IAM) para checar permissões (RNF02, RF04).  
+- Requer a interface **IExecucaoConsulta** do Módulo de Consultas (Query Engine).  
+- Requer a interface **INotificacao** do Serviço de Notificação para avisos de compartilhamento (RF03).  
+- Requer a interface **IMetadadosDW** do Data Warehouse (DW) para leitura de schemas.
+
+---
+
+## Módulo de Consultas (Query Engine)
+
+**Descrição:**  
+Componente responsável por traduzir interações do usuário em consultas otimizadas e executá-las.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **IExecucaoConsulta** para o Serviço de BI (API Backend).
+
+**Interfaces Requeridas:**  
+- Requer a interface **IDadosOtimizados** dos Data Marts Departamentais para consultas performáticas (RNF03).  
+- Requer a interface **IDadosBrutos** do Data Warehouse (DW) para consultas detalhadas ou ad-hoc.
+
+---
+
+## Serviço de Identidade (IAM)
+
+**Descrição:**  
+Responsável por autenticação, autorização e gestão de usuários, grupos e permissões.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **IAutenticacao** para a Aplicação Web (RF01).  
+- Provê a interface **IAutorizacao** para o Serviço de BI (RF04).  
+- Provê uma **InterfaceAdmin** para gestão (utilizada pelo ator Admin).
+
+---
+
+## Serviço de Suporte (Ticketing)
+
+**Descrição:**  
+Gerencia todo o ciclo de vida dos tickets de suporte.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **ISuporte** para a Aplicação Web (Frontend), permitindo abertura e consulta de tickets (RF05).
+
+---
+
+## Serviço de Aprendizado (Learning)
+
+**Descrição:**  
+Fornece conteúdo estático e dinâmico para treinamento dos usuários.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **IAprendizado** para a Aplicação Web (Frontend), disponibilizando conteúdo educacional (RF06).
+
+---
+
+## Serviço de Notificação
+
+**Descrição:**  
+Gerencia comunicação assíncrona com os usuários (e-mails, alertas internos).
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **INotificacao** para o Serviço de BI, Serviço de Integração e demais componentes que necessitem enviar alertas.
+
+**Interfaces Requeridas:**  
+- Requer serviços externos (ex.: gateway de e-mail, WebSockets) para entrega das mensagens.
+
+---
+
+## Serviço de Integração (ETL/ELT)
+
+**Descrição:**  
+Executa extração, transformação e carga de dados para o DW e Data Marts.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **IUploadTabela** para a Aplicação Web (Frontend).  
+- Provê a interface **ICargaDW** para o Data Warehouse (DW).  
+- Provê a interface **ICargaDataMart** para os Data Marts.
+
+**Interfaces Requeridas:**  
+- Requer a interface **IExtracaoDados** das Fontes de Dados.  
+- Requer a interface **INotificacao** do Serviço de Notificação para informar progresso dos jobs.  
+- Requer a interface **IDadosIntegrados** do Data Warehouse (DW) para geração de Data Marts.
+
+---
+
+## Data Warehouse (DW)
+
+**Descrição:**  
+Repositório central de dados históricos, integrado e granular.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **IMetadadosDW** para o Serviço de BI.  
+- Provê a interface **IDadosBrutos** para o Módulo de Consultas.  
+- Provê a interface **IDadosIntegrados** para o Serviço de Integração.
+
+**Interfaces Requeridas:**  
+- Requer a interface **ICargaDW** do Serviço de Integração (ETL/ELT).
+
+---
+
+## Data Marts Departamentais
+
+**Descrição:**  
+Subconjuntos especializados e otimizados do DW para suportar áreas específicas.
+
+### Interfaces e Conexões
+
+**Interface Provedora:**  
+- Provê a interface **IDadosOtimizados** para o Módulo de Consultas.
+
+**Interfaces Requeridas:**  
+- Requer a interface **ICargaDataMart** do Serviço de Integração (ETL/ELT).
