@@ -550,49 +550,33 @@ Subconjuntos especializados e otimizados do DW para suportar áreas específicas
 ```mermaid
 flowchart LR
 
-    %% ==== FRONTEND =====
-    Frontend["Aplicação Web (Frontend)"]
+%% ====== FRONTEND ======
+Frontend["Aplicação Web (Frontend)"]
 
-    %% ==== BACKEND / SERVIÇOS =====
-    BIService["Serviço de BI (API Backend)"]
-    QueryEngine["Módulo de Consultas (Query Engine)"]
-    IAM["Serviço de Identidade (IAM)"]
-    Ticketing["Serviço de Suporte (Ticketing)"]
-    Learning["Serviço de Aprendizado (Learning)"]
-    Notificacao["Serviço de Notificação"]
-    ETL["Serviço de Integração (ETL/ELT)"]
+%% ====== BACKEND / SERVIÇOS ======
+BIServer["Serviço de BI (API Backend)"]
+QueryEngine["Módulo de Consultas (Query Engine)"]
+IAM["Serviço de Identidade (IAM)"]
+Notification["Módulo de Notificações"]
 
-    %% ==== DADOS =====
-    DW["Data Warehouse (DW)"]
-    DM["Data Marts Departamentais"]
+%% ====== ETL / DW ======
+Integration["Serviço de Integração (ETL/ELT)"]
+DWCore["Núcleo do DW (DW Core)"]
+DataMarts["Data Marts Operacionais"]
 
-    %% ===== CONEXÕES DO FRONTEND =====
-    Frontend -->|"IAutenticacao"| IAM
-    Frontend -->|"IServicoBI"| BIService
-    Frontend -->|"ISuporte"| Ticketing
-    Frontend -->|"IAprendizado"| Learning
-    Frontend -->|"IUploadTabela"| ETL
+%% ====== CONEXÕES ======
 
-    %% ===== SERVIÇO DE BI =====
-    BIService -->|"IAutorizacao"| IAM
-    BIService -->|"IExecucaoConsulta"| QueryEngine
-    BIService -->|"INotificacao"| Notificacao
-    BIService -->|"IMetadadosDW"| DW
+Frontend --> BIServer
+Frontend --> IAM
 
-    %% ===== QUERY ENGINE =====
-    QueryEngine -->|"IDadosOtimizados"| DM
-    QueryEngine -->|"IDadosBrutos"| DW
+BIServer --> QueryEngine
+BIServer --> DataMarts
 
-    %% ===== ETL / INTEGRAÇÃO =====
-    ETL -->|"ICargaDW"| DW
-    ETL -->|"ICargaDataMart"| DM
-    ETL -->|"INotificacao"| Notificacao
-    ETL -->|"IExtracaoDados"| DW
+QueryEngine --> DWCore
 
-    %% ===== DW =====
-    DW -->|"IDadosIntegrados"| ETL
+Integration --> DWCore
+Integration --> DataMarts
 
-    %% ===== NOTIFICAÇÃO =====
-    Notificacao -.->|"Serviços externos (E-mail/WebSocket)"-.-> Notificacao
-```
+IAM --> BIServer
 
+BIServer --> Notification
