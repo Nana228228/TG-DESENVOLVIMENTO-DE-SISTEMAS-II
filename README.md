@@ -545,3 +545,52 @@ Subconjuntos especializados e otimizados do DW para suportar áreas específicas
 
 **Interfaces Requeridas:**  
 - Requer a interface **ICargaDataMart** do Serviço de Integração (ETL/ELT).
+
+## Diagrama de Componentes 
+flowchart LR
+
+    %% ==== FRONTEND =====
+    Frontend["Aplicação Web (Frontend)"]
+
+    %% ==== BACKEND / SERVIÇOS =====
+    BIService["Serviço de BI (API Backend)"]
+    QueryEngine["Módulo de Consultas (Query Engine)"]
+    IAM["Serviço de Identidade (IAM)"]
+    Ticketing["Serviço de Suporte (Ticketing)"]
+    Learning["Serviço de Aprendizado (Learning)"]
+    Notificacao["Serviço de Notificação"]
+    ETL["Serviço de Integração (ETL/ELT)"]
+
+    %% ==== DADOS =====
+    DW["Data Warehouse (DW)"]
+    DM["Data Marts Departamentais"]
+
+    %% ===== CONEXÕES DO FRONTEND =====
+    Frontend -->|"IAutenticacao"| IAM
+    Frontend -->|"IServicoBI"| BIService
+    Frontend -->|"ISuporte"| Ticketing
+    Frontend -->|"IAprendizado"| Learning
+    Frontend -->|"IUploadTabela"| ETL
+
+    %% ===== SERVIÇO DE BI =====
+    BIService -->|"IAutorizacao"| IAM
+    BIService -->|"IExecucaoConsulta"| QueryEngine
+    BIService -->|"INotificacao"| Notificacao
+    BIService -->|"IMetadadosDW"| DW
+
+    %% ===== QUERY ENGINE =====
+    QueryEngine -->|"IDadosOtimizados"| DM
+    QueryEngine -->|"IDadosBrutos"| DW
+
+    %% ===== ETL / INTEGRAÇÃO =====
+    ETL -->|"ICargaDW"| DW
+    ETL -->|"ICargaDataMart"| DM
+    ETL -->|"INotificacao"| Notificacao
+    ETL -->|"IExtracaoDados"| DW
+
+    %% ===== DW =====
+    DW -->|"IDadosIntegrados"| ETL
+
+    %% ===== NOTIFICAÇÃO =====
+    Notificacao -.->|"Serviços externos (E-mail/WebSocket)"-.-> Notificacao
+
