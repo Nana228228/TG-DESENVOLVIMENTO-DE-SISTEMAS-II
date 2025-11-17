@@ -547,6 +547,7 @@ Subconjuntos especializados e otimizados do DW para suportar áreas específicas
 - Requer a interface **ICargaDataMart** do Serviço de Integração (ETL/ELT).
 
 ## Diagrama de Componentes 
+```mermaid
 flowchart LR
 
     %% ==== FRONTEND =====
@@ -593,4 +594,5 @@ flowchart LR
 
     %% ===== NOTIFICAÇÃO =====
     Notificacao -.->|"Serviços externos (E-mail/WebSocket)"-.-> Notificacao
+```
 
