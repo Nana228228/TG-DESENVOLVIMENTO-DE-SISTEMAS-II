@@ -398,9 +398,6 @@ Interface do usuário (UI) renderizada no navegador, conforme prototipado nos wi
 
 ### Interfaces e Conexões
 
-**Interface Provedora (para o Ator):**  
-- Provê a Interface Gráfica (UI) para o Usuário/Admin, permitindo a visualização e operação do sistema.
-
 **Interfaces Requeridas (o que consome):**  
 - Requer a interface **IAutenticacao** do Serviço de Identidade (IAM) para validar credenciais (RF01).  
 - Requer a interface **IServicoBI** do Serviço de BI (API Backend) para buscar, criar, editar e compartilhar relatórios (RF02, RF03).  
