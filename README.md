@@ -545,35 +545,48 @@ Subconjuntos especializados e otimizados do DW para suportar áreas específicas
 
 ## Diagrama de Componentes 
 ```mermaid
-flowchart LR
+graph TD
+    %% --- Estilos ---
+    classDef frontend fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#000;
+    classDef backend fill:#fff9c4,stroke:#fbc02d,stroke-width:2px,color:#000;
+    classDef data fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000;
+    classDef external fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000;
 
-%% ====== FRONTEND ======
-Frontend["Aplicação Web (Frontend)"]
+    %% --- Componentes ---
+    UI["«Component»<br><b>Aplicação Web</b><br>(Frontend)"]:::frontend
+    
+    IAM["«Component»<br><b>Serviço de Identidade</b><br>(IAM)"]:::external
+    BI["«Component»<br><b>Serviço de BI</b><br>(API Backend)"]:::backend
+    Support["«Component»<br><b>Serviço de Suporte</b><br>(Ticketing)"]:::external
+    Learning["«Component»<br><b>Serviço de Aprendizado</b><br>(Learning)"]:::external
+    
+    QueryEngine["«Component»<br><b>Módulo de Consultas</b><br>(Query Engine)"]:::backend
+    Notif["«Component»<br><b>Serviço de Notificação</b>"]:::backend
+    ETL["«Component»<br><b>Serviço de Integração</b><br>(ETL/ELT)"]:::backend
+    
+    DW["«Component»<br><b>Data Warehouse</b><br>(DW)"]:::data
+    DM["«Component»<br><b>Data Marts</b><br>(Departamentais)"]:::data
 
-%% ====== BACKEND / SERVIÇOS ======
-BIServer["Serviço de BI (API Backend)"]
-QueryEngine["Módulo de Consultas (Query Engine)"]
-IAM["Serviço de Identidade (IAM)"]
-Notification["Módulo de Notificações"]
+    %% --- Conexões (Interfaces) ---
+    %% Frontend consome:
+    UI -.->|IAutenticacao| IAM
+    UI -.->|IServicoBI| BI
+    UI -.->|ISuporte| Support
+    UI -.->|IAprendizado| Learning
+    UI -.->|IUploadTabela| ETL
 
-%% ====== ETL / DW ======
-Integration["Serviço de Integração (ETL/ELT)"]
-DWCore["Núcleo do DW (DW Core)"]
-DataMarts["Data Marts Operacionais"]
+    %% Backend BI consome:
+    BI -.->|IAutorizacao| IAM
+    BI -.->|INotificacao| Notif
+    BI -.->|IExecucaoConsulta| QueryEngine
+    BI -.->|IMetadadosDW| DW
 
-%% ====== CONEXÕES ======
+    %% Query Engine consome:
+    QueryEngine -.->|IDadosBrutos| DW
+    QueryEngine -.->|IDadosOtimizados| DM
 
-Frontend --> BIServer
-Frontend --> IAM
-
-BIServer --> QueryEngine
-BIServer --> DataMarts
-
-QueryEngine --> DWCore
-
-Integration --> DWCore
-Integration --> DataMarts
-
-IAM --> BIServer
-
-BIServer --> Notification
+    %% ETL consome e provê carga:
+    ETL -.->|INotificacao| Notif
+    ETL -.->|IDadosIntegrados| DW
+    ETL -->|ICargaDW| DW
+    ETL -->|ICargaDataMart| DM
